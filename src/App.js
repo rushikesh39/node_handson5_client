@@ -2,7 +2,7 @@ import "./App.css"
 import React, { useEffect, useState } from 'react'
 import { io } from 'socket.io-client'
 
-let socket=io("http://localhost:5000")
+let socket=io("https://handson5.onrender.com")
 export default function App() {
   const [messages,setMessages]=useState([])
   const [data, setData]=useState({
@@ -27,6 +27,9 @@ export default function App() {
   }
  const Chat=()=>{
     socket.emit("groupChat",data.exclusiveBroadcast)
+    // setData({
+    //   exclusiveBroadcast:""
+    // })
   }
  const handleChange=(e)=>{
   // setData{e.target.name:e.target.value}
